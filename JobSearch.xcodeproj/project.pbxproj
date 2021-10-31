@@ -16,6 +16,10 @@
 		C937405D2729B8CE00FE280E /* JobSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C937405C2729B8CE00FE280E /* JobSearchTests.swift */; };
 		C93740672729B8CE00FE280E /* JobSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93740662729B8CE00FE280E /* JobSearchUITests.swift */; };
 		C93740692729B8CE00FE280E /* JobSearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93740682729B8CE00FE280E /* JobSearchUITestsLaunchTests.swift */; };
+		C9FFDCB9272A8DEB00B7EF19 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFDCB8272A8DEB00B7EF19 /* CardView.swift */; };
+		C9FFDCBD272A935400B7EF19 /* ServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFDCBC272A935400B7EF19 /* ServiceLayer.swift */; };
+		C9FFDCC1272A953E00B7EF19 /* JobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFDCC0272A953E00B7EF19 /* JobModel.swift */; };
+		C9FFDCC4272A963A00B7EF19 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFDCC3272A963A00B7EF19 /* ServiceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		C93740622729B8CE00FE280E /* JobSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93740662729B8CE00FE280E /* JobSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSearchUITests.swift; sourceTree = "<group>"; };
 		C93740682729B8CE00FE280E /* JobSearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSearchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C9FFDCB8272A8DEB00B7EF19 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		C9FFDCBC272A935400B7EF19 /* ServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceLayer.swift; path = "../New Group/ServiceLayer.swift"; sourceTree = "<group>"; };
+		C9FFDCC0272A953E00B7EF19 /* JobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobModel.swift; sourceTree = "<group>"; };
+		C9FFDCC3272A963A00B7EF19 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +107,15 @@
 		C93740442729B8CD00FE280E /* JobSearch */ = {
 			isa = PBXGroup;
 			children = (
+				C9FFDCBF272A94E800B7EF19 /* Model */,
+				C9FFDCBE272A94D500B7EF19 /* Service */,
 				C93740452729B8CD00FE280E /* AppDelegate.swift */,
 				C93740472729B8CD00FE280E /* SceneDelegate.swift */,
+				C9FFDCB8272A8DEB00B7EF19 /* CardView.swift */,
 				C93740492729B8CD00FE280E /* ViewController.swift */,
 				C937404B2729B8CD00FE280E /* Main.storyboard */,
-				C937404E2729B8CE00FE280E /* Assets.xcassets */,
 				C93740502729B8CE00FE280E /* LaunchScreen.storyboard */,
+				C937404E2729B8CE00FE280E /* Assets.xcassets */,
 				C93740532729B8CE00FE280E /* Info.plist */,
 			);
 			path = JobSearch;
@@ -125,6 +136,24 @@
 				C93740682729B8CE00FE280E /* JobSearchUITestsLaunchTests.swift */,
 			);
 			path = JobSearchUITests;
+			sourceTree = "<group>";
+		};
+		C9FFDCBE272A94D500B7EF19 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C9FFDCBC272A935400B7EF19 /* ServiceLayer.swift */,
+				C9FFDCC3272A963A00B7EF19 /* ServiceManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C9FFDCBF272A94E800B7EF19 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C9FFDCC0272A953E00B7EF19 /* JobModel.swift */,
+			);
+			name = Model;
+			path = Service/Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +287,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9FFDCBD272A935400B7EF19 /* ServiceLayer.swift in Sources */,
 				C937404A2729B8CD00FE280E /* ViewController.swift in Sources */,
 				C93740462729B8CD00FE280E /* AppDelegate.swift in Sources */,
+				C9FFDCB9272A8DEB00B7EF19 /* CardView.swift in Sources */,
 				C93740482729B8CD00FE280E /* SceneDelegate.swift in Sources */,
+				C9FFDCC4272A963A00B7EF19 /* ServiceManager.swift in Sources */,
+				C9FFDCC1272A953E00B7EF19 /* JobModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

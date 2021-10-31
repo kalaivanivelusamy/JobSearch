@@ -11,9 +11,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchData()
         // Do any additional setup after loading the view.
     }
 
+    func fetchData() {
+         NetworkManager().getWeather(onCompletion: { result, error in
+            print("Result \(result)")
+        })
+    }
 
 }
 
