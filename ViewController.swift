@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let jobML = JobSearchMiddleLayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
@@ -16,9 +18,8 @@ class ViewController: UIViewController {
     }
 
     func fetchData() {
-         NetworkManager().getWeather(onCompletion: { result, error in
-            print("Result \(result)")
-        })
+        
+        jobML.getJob(parameters: ["name": "kal"])
     }
 
 }

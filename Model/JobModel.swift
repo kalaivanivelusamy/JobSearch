@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct JobModel: Response {
+    
+    var httpStatus: Int
+    var message: String
+    var authToken: String
+}
