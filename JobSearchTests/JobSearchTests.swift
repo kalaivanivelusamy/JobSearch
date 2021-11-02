@@ -29,5 +29,18 @@ class JobSearchTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testGetJobsWithExpectedURLHostAndPath() {
+        
+        let apiRepository = APIRepository()
+        let mockURLSession = MockURLSession()
+        
+        apiRepository.session = mockURLSession
+        apiRepository.getMovies{ movies, error in  }
+        
+        XCTAssertEqual(mockURLSession.cachedUrl?.host, "mymovieslist.com")
+        XCTAssertEqual(mockURLSession.cachedUrl?.path, "/topmovies")
+      }
+
 
 }
