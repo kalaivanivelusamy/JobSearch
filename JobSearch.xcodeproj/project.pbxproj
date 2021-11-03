@@ -22,6 +22,7 @@
 		C937405D2729B8CE00FE280E /* JobSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C937405C2729B8CE00FE280E /* JobSearchTests.swift */; };
 		C93740672729B8CE00FE280E /* JobSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93740662729B8CE00FE280E /* JobSearchUITests.swift */; };
 		C93740692729B8CE00FE280E /* JobSearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93740682729B8CE00FE280E /* JobSearchUITestsLaunchTests.swift */; };
+		C974FE362732325D003E1CD5 /* MockTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974FE352732325D003E1CD5 /* MockTask.swift */; };
 		C9D1C50027319933007A1006 /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D1C4FF27319932007A1006 /* APIRepository.swift */; };
 		C9D1C50227319E4A007A1006 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D1C50127319E4A007A1006 /* MockURLSession.swift */; };
 		C9FFDCC1272A953E00B7EF19 /* JobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFDCC0272A953E00B7EF19 /* JobModel.swift */; };
@@ -64,6 +65,7 @@
 		C93740622729B8CE00FE280E /* JobSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93740662729B8CE00FE280E /* JobSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSearchUITests.swift; sourceTree = "<group>"; };
 		C93740682729B8CE00FE280E /* JobSearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSearchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C974FE352732325D003E1CD5 /* MockTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTask.swift; sourceTree = "<group>"; };
 		C9D1C4FF27319932007A1006 /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
 		C9D1C50127319E4A007A1006 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		C9FFDCC0272A953E00B7EF19 /* JobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobModel.swift; sourceTree = "<group>"; };
@@ -107,7 +109,6 @@
 			children = (
 				C90B4451272FACF800C53CCE /* APIHandler.swift */,
 				C90B4453272FAD0300C53CCE /* APILoader.swift */,
-				C9D1C4FF27319932007A1006 /* APIRepository.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -115,6 +116,9 @@
 		C93740392729B8CD00FE280E = {
 			isa = PBXGroup;
 			children = (
+				C974FE352732325D003E1CD5 /* MockTask.swift */,
+				C9D1C50127319E4A007A1006 /* MockURLSession.swift */,
+				C9D1C4FF27319932007A1006 /* APIRepository.swift */,
 				C93740492729B8CD00FE280E /* ViewController.swift */,
 				C90B4446272FAA7C00C53CCE /* MiddleLayer */,
 				C9FFDCBF272A94E800B7EF19 /* Model */,
@@ -146,7 +150,6 @@
 				C93740502729B8CE00FE280E /* LaunchScreen.storyboard */,
 				C937404E2729B8CE00FE280E /* Assets.xcassets */,
 				C93740532729B8CE00FE280E /* Info.plist */,
-				C9D1C50127319E4A007A1006 /* MockURLSession.swift */,
 			);
 			path = JobSearch;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				C93740462729B8CD00FE280E /* AppDelegate.swift in Sources */,
 				C90B4452272FACF800C53CCE /* APIHandler.swift in Sources */,
 				C90B4454272FAD0300C53CCE /* APILoader.swift in Sources */,
+				C974FE362732325D003E1CD5 /* MockTask.swift in Sources */,
 				C9D1C50027319933007A1006 /* APIRepository.swift in Sources */,
 				C93740482729B8CD00FE280E /* SceneDelegate.swift in Sources */,
 				C9FFDCC1272A953E00B7EF19 /* JobModel.swift in Sources */,

@@ -33,7 +33,7 @@ class JobSearchTests: XCTestCase {
     func testGetJobsWithExpectedURLHostAndPath() {
         
         let apiRepository = APIRepository()
-        let mockURLSession = MockURLSession()
+        let mockURLSession  = MockURLSession(data: jsonData, urlResponse: nil, error: nil)
         
         apiRepository.session = mockURLSession
         apiRepository.getMovies{ movies, error in  }
@@ -41,6 +41,86 @@ class JobSearchTests: XCTestCase {
         XCTAssertEqual(mockURLSession.cachedUrl?.host, "mymovieslist.com")
         XCTAssertEqual(mockURLSession.cachedUrl?.path, "/topmovies")
       }
+    
+    func testGetMoviesSuccessReturnsMovies(){
+        let jsonData = "[{\"title\": \"Mission Impossible Fallout\",\"detail\": \"A Tom Cruise Movie\"}]".data(using: .utf8)
+
+        let apiRepository = APIRepository()
+        let mockURLSession = MockURLSession(data: jsonData, urlResponse: nil, error: nil)
+        apiRepository.session = mockURLSession
+        
+        let moviesExpectation = expectation(description: "movies")
+        var movieResponse: [Movie]?
+        
+        apiRepository.getMovies{ (movies,error) in
+            movieResponse = movies
+            moviesExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1) { (error) in
+            XCTAssertNotNil(movieResponse)
+        }
+    }
+    
+    
+    func testGetMoviesWhenResponseErrorReturnsError(){
+       
+        let apiRepo = APIRepository()
+        
+        let error = NSError(domain: "error", code: 1234, userInfo: nil)
+        let mockSession = MockURLSession(data: nil, urlResponse: nil, error: error)
+        
+        apiRepo.session = mockSession
+        
+        let errorExpectation = expectation(description: "error")
+        let errorResponse: Error?
+        
+        apiRepo.getMovies{ (movies,error) in
+            errorResponse = error
+            errorExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1) { (error) in
+            XCTAssertNotNil(errorResponse)
+        }
+    }
+    
+    func testGetMoviesWhenEmptyDataReturnsError() {
+        
+        let apiRepo = APIRepository()
+        let mockUrlSession = MockURLSession(data: nil, urlResponse: nil, error: nil)
+        apiRepo.session = mockUrlSession
+        
+        let errorExpectation = expectation(description: "error")
+        let errorResponse: Error?
+        
+        apiRepo.getMovies{ (movies,error) in
+            errorResponse = error
+            errorExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1) { (error) in
+            XCTAssertNotNil(errorResponse)
+        }
+    }
+    
+    func testGetMoviesInvalidJSONReturnsError() {
+        let jsonData = "[{\"t\"}]".data(using: .utf8)
+        let apiRep = APIRepository()
+        let mockSession = MockURLSession(data: jsonData, urlResponse: nil, error: nil)
+        apiRep.session = mockSession
+        let errorExpectation = expectation(description: "error")
+        var errorResponse: Error?
+        
+        apiRep.getMovies{ (movies, error) in
+            errorResponse = error
+            errorExpectation.fulfill()
+        }
+        waitForExpectations(timeout: 1){ (error) in
+            XCTAssertNotNil(errorResponse)
+        }
+
+    }
 
 
 }
