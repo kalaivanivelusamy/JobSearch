@@ -33,3 +33,20 @@ class APIRepository {
     }
     
 }
+
+
+struct Networking {
+    var urlSession = URLSession.shared
+    
+    func sendPostRequest(to url: URL,body: Data,then handler: @escaping (Result<Data,Error>) -> Void)){
+     
+        var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData)
+        request.httpMethod = "POST"
+        
+        let task = urlSession.uploadTask(with: request, from: body, completionHandler: { data, response, error in
+            
+            
+        })
+        task.resume()
+    }
+}
